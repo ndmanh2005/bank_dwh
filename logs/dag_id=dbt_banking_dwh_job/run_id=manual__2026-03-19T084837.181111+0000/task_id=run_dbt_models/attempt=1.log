@@ -1,0 +1,40 @@
+[2026-03-19T08:48:45.119+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-03-19T08:48:45.151+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_banking_dwh_job.run_dbt_models manual__2026-03-19T08:48:37.181111+00:00 [queued]>
+[2026-03-19T08:48:45.159+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_banking_dwh_job.run_dbt_models manual__2026-03-19T08:48:37.181111+00:00 [queued]>
+[2026-03-19T08:48:45.160+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 2
+[2026-03-19T08:48:45.174+0000] {taskinstance.py:2327} INFO - Executing <Task(BashOperator): run_dbt_models> on 2026-03-19 08:48:37.181111+00:00
+[2026-03-19T08:48:45.186+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dbt_banking_dwh_job', 'run_dbt_models', 'manual__2026-03-19T08:48:37.181111+00:00', '--job-id', '19', '--raw', '--subdir', 'DAGS_FOLDER/dbt_banking_job.py', '--cfg-path', '/tmp/tmp9yyxn8vk']
+[2026-03-19T08:48:45.189+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=6970) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-03-19T08:48:45.189+0000] {standard_task_runner.py:91} INFO - Job 19: Subtask run_dbt_models
+[2026-03-19T08:48:45.190+0000] {standard_task_runner.py:63} INFO - Started process 6972 to run task
+[2026-03-19T08:48:45.266+0000] {task_command.py:426} INFO - Running <TaskInstance: dbt_banking_dwh_job.run_dbt_models manual__2026-03-19T08:48:37.181111+00:00 [running]> on host 51c6d1f0e973
+[2026-03-19T08:48:45.367+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='minh_anh' AIRFLOW_CTX_DAG_ID='dbt_banking_dwh_job' AIRFLOW_CTX_TASK_ID='run_dbt_models' AIRFLOW_CTX_EXECUTION_DATE='2026-03-19T08:48:37.181111+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-03-19T08:48:37.181111+00:00'
+[2026-03-19T08:48:45.372+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-03-19T08:48:45.373+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-03-19T08:48:45.376+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/dags/banking_dwh && dbt run --profiles-dir .']
+[2026-03-19T08:48:45.394+0000] {subprocess.py:86} INFO - Output:
+[2026-03-19T08:48:48.332+0000] {subprocess.py:93} INFO - [0m08:48:48  Running with dbt=1.11.7
+[2026-03-19T08:48:48.428+0000] {subprocess.py:93} INFO - [0m08:48:48  Encountered an error:
+[2026-03-19T08:48:48.429+0000] {subprocess.py:93} INFO - Runtime Error
+[2026-03-19T08:48:48.430+0000] {subprocess.py:93} INFO -   Credentials in profile "banking_dwh", target "dev" invalid: 2512 is not of type 'string'
+[2026-03-19T08:48:49.766+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2026-03-19T08:48:49.768+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-03-19T08:48:49.779+0000] {taskinstance.py:2890} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2026-03-19T08:48:49.786+0000] {taskinstance.py:1205} INFO - Marking task as UP_FOR_RETRY. dag_id=dbt_banking_dwh_job, task_id=run_dbt_models, execution_date=20260319T084837, start_date=20260319T084845, end_date=20260319T084849
+[2026-03-19T08:48:49.800+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 19 for task run_dbt_models (Bash command failed. The command returned a non-zero exit code 2.; 6972)
+[2026-03-19T08:48:49.817+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2026-03-19T08:48:49.833+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-03-19T08:48:49.836+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,102 @@
+[2026-03-19T09:14:16.473+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-03-19T09:14:16.540+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_banking_dwh_job.run_dbt_models manual__2026-03-19T09:14:07.696915+00:00 [queued]>
+[2026-03-19T09:14:16.555+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_banking_dwh_job.run_dbt_models manual__2026-03-19T09:14:07.696915+00:00 [queued]>
+[2026-03-19T09:14:16.556+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 2
+[2026-03-19T09:14:16.580+0000] {taskinstance.py:2327} INFO - Executing <Task(BashOperator): run_dbt_models> on 2026-03-19 09:14:07.696915+00:00
+[2026-03-19T09:14:16.598+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dbt_banking_dwh_job', 'run_dbt_models', 'manual__2026-03-19T09:14:07.696915+00:00', '--job-id', '34', '--raw', '--subdir', 'DAGS_FOLDER/dbt_banking_job.py', '--cfg-path', '/tmp/tmp_kfz6tk3']
+[2026-03-19T09:14:16.603+0000] {standard_task_runner.py:91} INFO - Job 34: Subtask run_dbt_models
+[2026-03-19T09:14:16.603+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=19727) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-03-19T09:14:16.605+0000] {standard_task_runner.py:63} INFO - Started process 19729 to run task
+[2026-03-19T09:14:16.686+0000] {task_command.py:426} INFO - Running <TaskInstance: dbt_banking_dwh_job.run_dbt_models manual__2026-03-19T09:14:07.696915+00:00 [running]> on host 51c6d1f0e973
+[2026-03-19T09:14:16.783+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='minh_anh' AIRFLOW_CTX_DAG_ID='dbt_banking_dwh_job' AIRFLOW_CTX_TASK_ID='run_dbt_models' AIRFLOW_CTX_EXECUTION_DATE='2026-03-19T09:14:07.696915+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-03-19T09:14:07.696915+00:00'
+[2026-03-19T09:14:16.786+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-03-19T09:14:16.787+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-03-19T09:14:16.788+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/dags/banking_dwh && pwd && ls -la && cat profiles.yml && dbt run --profiles-dir .']
+[2026-03-19T09:14:16.806+0000] {subprocess.py:86} INFO - Output:
+[2026-03-19T09:14:16.810+0000] {subprocess.py:93} INFO - /opt/***/dags/banking_dwh
+[2026-03-19T09:14:16.837+0000] {subprocess.py:93} INFO - total 4
+[2026-03-19T09:14:16.838+0000] {subprocess.py:93} INFO - drwxrwxrwx 1 *** root 4096 Mar 19 08:48 .
+[2026-03-19T09:14:16.839+0000] {subprocess.py:93} INFO - drwxrwxrwx 1 *** root 4096 Mar 19 08:47 ..
+[2026-03-19T09:14:16.839+0000] {subprocess.py:93} INFO - -rwxrwxrwx 1 *** root   52 Mar 12 03:21 .gitignore
+[2026-03-19T09:14:16.839+0000] {subprocess.py:93} INFO - -rw-rw-r-- 1 *** root   41 Mar 19 08:48 .user.yml
+[2026-03-19T09:14:16.840+0000] {subprocess.py:93} INFO - -rwxrwxrwx 1 *** root  571 Mar  2 09:00 README.md
+[2026-03-19T09:14:16.841+0000] {subprocess.py:93} INFO - drwxrwxrwx 1 *** root 4096 Mar 19 07:33 analyses
+[2026-03-19T09:14:16.842+0000] {subprocess.py:93} INFO - drwxrwxrwx 1 *** root 4096 Mar 19 03:32 dbt_packages
+[2026-03-19T09:14:16.842+0000] {subprocess.py:93} INFO - -rwxrwxrwx 1 *** root 1374 Mar 19 03:33 dbt_project.yml
+[2026-03-19T09:14:16.843+0000] {subprocess.py:93} INFO - drwxrwxrwx 1 *** root 4096 Mar 19 07:33 logs
+[2026-03-19T09:14:16.843+0000] {subprocess.py:93} INFO - drwxrwxrwx 1 *** root 4096 Mar 19 07:33 macros
+[2026-03-19T09:14:16.844+0000] {subprocess.py:93} INFO - drwxrwxrwx 1 *** root 4096 Mar 19 07:33 models
+[2026-03-19T09:14:16.844+0000] {subprocess.py:93} INFO - -rwxrwxrwx 1 *** root  293 Mar 19 09:13 profiles.yml
+[2026-03-19T09:14:16.844+0000] {subprocess.py:93} INFO - drwxrwxrwx 1 *** root 4096 Mar 19 07:33 seeds
+[2026-03-19T09:14:16.845+0000] {subprocess.py:93} INFO - drwxrwxrwx 1 *** root 4096 Mar 19 07:33 snapshots
+[2026-03-19T09:14:16.845+0000] {subprocess.py:93} INFO - drwxrwxrwx 1 *** root 4096 Mar 19 07:33 target
+[2026-03-19T09:14:16.846+0000] {subprocess.py:93} INFO - drwxrwxrwx 1 *** root 4096 Mar 19 07:33 tests
+[2026-03-19T09:14:16.853+0000] {subprocess.py:93} INFO - banking_dwh:
+[2026-03-19T09:14:16.854+0000] {subprocess.py:93} INFO -   target: dev
+[2026-03-19T09:14:16.854+0000] {subprocess.py:93} INFO -   outputs:
+[2026-03-19T09:14:16.855+0000] {subprocess.py:93} INFO -     dev:
+[2026-03-19T09:14:16.855+0000] {subprocess.py:93} INFO -       type: postgres
+[2026-03-19T09:14:16.856+0000] {subprocess.py:93} INFO -       host: host.docker.internal
+[2026-03-19T09:14:16.856+0000] {subprocess.py:93} INFO -       port: 5432
+[2026-03-19T09:14:16.857+0000] {subprocess.py:93} INFO -       user: postgres
+[2026-03-19T09:14:16.857+0000] {subprocess.py:93} INFO -       password: "2512"
+[2026-03-19T09:14:16.858+0000] {subprocess.py:93} INFO -       dbname: postgres
+[2026-03-19T09:14:16.858+0000] {subprocess.py:93} INFO -       schema: sor # Tôi cấu hình sẵn schema là sor dựa trên file code của bạn
+[2026-03-19T09:14:19.425+0000] {subprocess.py:93} INFO -       threads: 4[0m09:14:19  Running with dbt=1.11.7
+[2026-03-19T09:14:19.840+0000] {subprocess.py:93} INFO - [0m09:14:19  Registered adapter: postgres=1.10.0
+[2026-03-19T09:14:20.205+0000] {subprocess.py:93} INFO - [0m09:14:20  Unable to do partial parsing because of a version mismatch
+[2026-03-19T09:14:22.037+0000] {subprocess.py:93} INFO - [0m09:14:22  [[33mWARNING[0m]: Did not find matching node for patch with name 'sor_customer_account_summary' in the 'models' section of file 'models/sor/schema.yml'
+[2026-03-19T09:14:22.146+0000] {subprocess.py:93} INFO - [0m09:14:22  [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+[2026-03-19T09:14:22.147+0000] {subprocess.py:93} INFO - functionality
+[2026-03-19T09:14:22.148+0000] {subprocess.py:93} INFO - Found top-level arguments to test `accepted_values` defined on 'sor_branch' in
+[2026-03-19T09:14:22.148+0000] {subprocess.py:93} INFO - package 'banking_dwh' (models/sor/schema.yml). Arguments to generic tests should
+[2026-03-19T09:14:22.149+0000] {subprocess.py:93} INFO - be nested under the `arguments` property.
+[2026-03-19T09:14:22.541+0000] {subprocess.py:93} INFO - [0m09:14:22  [[33mWARNING[0m]: Test 'test.banking_dwh.unique_sor_customer_account_summary_summary_key.b6f179c86b' (models/sor/schema.yml) depends on a node named 'sor_customer_account_summary' in package '' which was not found
+[2026-03-19T09:14:22.542+0000] {subprocess.py:93} INFO - [0m09:14:22  [[33mWARNING[0m]: Test 'test.banking_dwh.not_null_sor_customer_account_summary_summary_key.1de0da26f7' (models/sor/schema.yml) depends on a node named 'sor_customer_account_summary' in package '' which was not found
+[2026-03-19T09:14:22.544+0000] {subprocess.py:93} INFO - [0m09:14:22  [[33mWARNING[0m]: Test 'test.banking_dwh.unique_sor_customer_account_summary_customer_key.1bdac97509' (models/sor/schema.yml) depends on a node named 'sor_customer_account_summary' in package '' which was not found
+[2026-03-19T09:14:22.545+0000] {subprocess.py:93} INFO - [0m09:14:22  [[33mWARNING[0m]: Test 'test.banking_dwh.not_null_sor_customer_account_summary_customer_key.c3827fb23e' (models/sor/schema.yml) depends on a node named 'sor_customer_account_summary' in package '' which was not found
+[2026-03-19T09:14:22.546+0000] {subprocess.py:93} INFO - [0m09:14:22  [[33mWARNING[0m]: Test 'test.banking_dwh.relationships_sor_customer_account_summary_customer_key__customer_key__ref_sor_customer_.bc49f115b7' (models/sor/schema.yml) depends on a node named 'sor_customer_account_summary' in package '' which was not found
+[2026-03-19T09:14:22.547+0000] {subprocess.py:93} INFO - [0m09:14:22  [[33mWARNING[0m]: Test 'test.banking_dwh.not_null_sor_customer_account_summary_total_accounts.91c42c9a15' (models/sor/schema.yml) depends on a node named 'sor_customer_account_summary' in package '' which was not found
+[2026-03-19T09:14:22.548+0000] {subprocess.py:93} INFO - [0m09:14:22  [[33mWARNING[0m]: Test 'test.banking_dwh.value_in_range_sor_customer_account_summary_total_accounts__1000__0.340dd3bea2' (models/sor/schema.yml) depends on a node named 'sor_customer_account_summary' in package '' which was not found
+[2026-03-19T09:14:22.549+0000] {subprocess.py:93} INFO - [0m09:14:22  [[33mWARNING[0m]: Test 'test.banking_dwh.value_in_range_sor_customer_account_summary_total_balance_vnd__999999999999999__0.622e537275' (models/sor/schema.yml) depends on a node named 'sor_customer_account_summary' in package '' which was not found
+[2026-03-19T09:14:22.664+0000] {subprocess.py:93} INFO - [0m09:14:22  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+[2026-03-19T09:14:22.664+0000] {subprocess.py:93} INFO - There are 1 unused configuration paths:
+[2026-03-19T09:14:22.665+0000] {subprocess.py:93} INFO - - models.banking_dwh.example
+[2026-03-19T09:14:22.895+0000] {subprocess.py:93} INFO - [0m09:14:22  Found 6 models, 73 data tests, 7 sources, 478 macros
+[2026-03-19T09:14:22.901+0000] {subprocess.py:93} INFO - [0m09:14:22
+[2026-03-19T09:14:22.903+0000] {subprocess.py:93} INFO - [0m09:14:22  Concurrency: 4 threads (target='dev')
+[2026-03-19T09:14:22.904+0000] {subprocess.py:93} INFO - [0m09:14:22
+[2026-03-19T09:14:23.607+0000] {subprocess.py:93} INFO - [0m09:14:23
+[2026-03-19T09:14:23.608+0000] {subprocess.py:93} INFO - [0m09:14:23  Finished running  in 0 hours 0 minutes and 0.70 seconds (0.70s).
+[2026-03-19T09:14:23.609+0000] {subprocess.py:93} INFO - [0m09:14:23  Encountered an error:
+[2026-03-19T09:14:23.609+0000] {subprocess.py:93} INFO - Database Error
+[2026-03-19T09:14:23.610+0000] {subprocess.py:93} INFO -   connection to server at "host.docker.internal" (192.168.65.254), port 5432 failed: FATAL:  password authentication failed for user "postgres"
+[2026-03-19T09:14:23.610+0000] {subprocess.py:93} INFO - 
+[2026-03-19T09:14:23.610+0000] {subprocess.py:93} INFO - [0m09:14:23  [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+[2026-03-19T09:14:23.611+0000] {subprocess.py:93} INFO - Summary of encountered deprecations:
+[2026-03-19T09:14:23.611+0000] {subprocess.py:93} INFO - - MissingArgumentsPropertyInGenericTestDeprecation: 14 occurrences
+[2026-03-19T09:14:23.611+0000] {subprocess.py:93} INFO - To see all deprecation instances instead of just the first occurrence of each,
+[2026-03-19T09:14:23.612+0000] {subprocess.py:93} INFO - run command again with the `--show-all-deprecations` flag. You may also need to
+[2026-03-19T09:14:23.612+0000] {subprocess.py:93} INFO - run with `--no-partial-parse` as some deprecations are only encountered during
+[2026-03-19T09:14:23.612+0000] {subprocess.py:93} INFO - parsing.
+[2026-03-19T09:14:25.041+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2026-03-19T09:14:25.051+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-03-19T09:14:25.064+0000] {taskinstance.py:2890} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2026-03-19T09:14:25.070+0000] {taskinstance.py:1205} INFO - Marking task as UP_FOR_RETRY. dag_id=dbt_banking_dwh_job, task_id=run_dbt_models, execution_date=20260319T091407, start_date=20260319T091416, end_date=20260319T091425
+[2026-03-19T09:14:25.084+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 34 for task run_dbt_models (Bash command failed. The command returned a non-zero exit code 2.; 19729)
+[2026-03-19T09:14:25.122+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2026-03-19T09:14:25.138+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-03-19T09:14:25.141+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,7 @@
+[2026-03-30T02:42:07.063+0000] {processor.py:161} INFO - Started process (PID=222) to work on /opt/airflow/dags/dbt_banking_job.py
+[2026-03-30T02:42:07.067+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dbt_banking_job.py for tasks to queue
+[2026-03-30T02:42:07.071+0000] {logging_mixin.py:188} INFO - [2026-03-30T02:42:07.070+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/dbt_banking_job.py
+[2026-03-30T02:42:07.108+0000] {processor.py:840} INFO - DAG(s) 'dbt_banking_dwh_job' retrieved from /opt/airflow/dags/dbt_banking_job.py
+[2026-03-30T02:42:07.180+0000] {logging_mixin.py:188} INFO - [2026-03-30T02:42:07.180+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-03-30T02:42:07.233+0000] {logging_mixin.py:188} INFO - [2026-03-30T02:42:07.233+0000] {dag.py:3954} INFO - Setting next_dagrun for dbt_banking_dwh_job to 2026-03-30 02:00:00+00:00, run_after=2026-03-31 02:00:00+00:00
+[2026-03-30T02:42:07.271+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dbt_banking_job.py took 0.219 seconds

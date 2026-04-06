@@ -1,0 +1,12 @@
+banking_dwh:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: host.minikube.internal
+      port: 5433
+      user: postgres
+      password: "123456"
+      dbname: postgres
+      schema: sor
+      threads: 4
