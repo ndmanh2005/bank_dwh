@@ -7,8 +7,7 @@ models:
   - name: sor_branch
     tests:
       - count_match:
-          arguments:
-            source_table: "{{ source('stg', 'stg_branch') }}"
+          source_table: "{{ source('stg', 'stg_branch') }}"
     columns:
       - name: branch_key
         tests:
@@ -20,9 +19,8 @@ models:
           - not_null
           - no_duplicate
           - minus_check:
-              arguments:
-                source_table: "{{ source('stg', 'stg_branch') }}"
-                source_column: branch_id
+              source_table: "{{ source('stg', 'stg_branch') }}"
+              source_column: branch_id
       - name: status_desc
         tests:
           - accepted_values:
@@ -36,8 +34,7 @@ models:
   - name: sor_customer
     tests:
       - count_match:
-          arguments:
-            source_table: "{{ source('stg', 'stg_customer') }}"
+          source_table: "{{ source('stg', 'stg_customer') }}"
     columns:
       - name: customer_key
         tests:
@@ -49,9 +46,8 @@ models:
           - not_null
           - no_duplicate
           - minus_check:
-              arguments:
-                source_table: "{{ source('stg', 'stg_customer') }}"
-                source_column: customer_id
+              source_table: "{{ source('stg', 'stg_customer') }}"
+              source_column: customer_id
       - name: full_name
         tests:
           - not_null
@@ -64,9 +60,8 @@ models:
       - name: age
         tests:
           - value_in_range:
-              arguments:
-                min_value: 0
-                max_value: 120
+              min_value: 0
+              max_value: 120
               config:
                 severity: warn
       - name: customer_type_desc
@@ -86,8 +81,7 @@ models:
   - name: sor_account
     tests:
       - count_match:
-          arguments:
-            source_table: "{{ source('stg', 'stg_account') }}"
+          source_table: "{{ source('stg', 'stg_account') }}"
     columns:
       - name: account_key
         tests:
@@ -99,9 +93,8 @@ models:
           - not_null
           - no_duplicate
           - minus_check:
-              arguments:
-                source_table: "{{ source('stg', 'stg_account') }}"
-                source_column: account_id
+              source_table: "{{ source('stg', 'stg_account') }}"
+              source_column: account_id
       - name: customer_key
         tests:
           - not_null
@@ -127,17 +120,15 @@ models:
       - name: interest_rate
         tests:
           - value_in_range:
-              arguments:
-                min_value: 0
-                max_value: 30
+              min_value: 0
+              max_value: 30
               config:
                 severity: warn
       - name: account_age_days
         tests:
           - value_in_range:
-              arguments:
-                min_value: 0
-                max_value: 36500
+              min_value: 0
+              max_value: 36500
               config:
                 severity: warn
 
@@ -147,8 +138,7 @@ models:
   - name: sor_transaction
     tests:
       - count_match:
-          arguments:
-            source_table: "{{ source('stg', 'stg_transaction') }}"
+          source_table: "{{ source('stg', 'stg_transaction') }}"
     columns:
       - name: transaction_key
         tests:
@@ -160,9 +150,8 @@ models:
           - not_null
           - no_duplicate
           - minus_check:
-              arguments:
-                source_table: "{{ source('stg', 'stg_transaction') }}"
-                source_column: transaction_id
+              source_table: "{{ source('stg', 'stg_transaction') }}"
+              source_column: transaction_id
       - name: account_key
         tests:
           - not_null
@@ -183,23 +172,20 @@ models:
       - name: amount
         tests:
           - value_in_range:
-              arguments:
-                min_value: 0.01
-                max_value: 999999999999
+              min_value: 0.01
+              max_value: 999999999999
       - name: amount_vnd
         tests:
           - not_null
           - value_in_range:
-              arguments:
-                min_value: 0.01
-                max_value: 999999999999999
+              min_value: 0.01
+              max_value: 999999999999999
       - name: exchange_rate
         tests:
           - not_null
           - value_in_range:
-              arguments:
-                min_value: 0.0001
-                max_value: 999999
+              min_value: 0.0001
+              max_value: 999999
       - name: channel_desc
         tests:
           - accepted_values:
@@ -213,8 +199,7 @@ models:
   - name: sor_daily_balance
     tests:
       - count_match:
-          arguments:
-            source_table: "{{ source('stg', 'stg_account_balance') }}"
+          source_table: "{{ source('stg', 'stg_account_balance') }}"
     columns:
       - name: balance_key
         tests:
@@ -230,18 +215,16 @@ models:
         tests:
           - not_null
           - value_in_range:
-              arguments:
-                min_value: 0
-                max_value: 999999999999999
+              min_value: 0
+              max_value: 999999999999999
               config:
                 severity: warn
       - name: exchange_rate
         tests:
           - not_null
           - value_in_range:
-              arguments:
-                min_value: 0.0001
-                max_value: 999999
+              min_value: 0.0001
+              max_value: 999999
       - name: net_movement_vnd
         tests:
           - not_null
@@ -266,16 +249,14 @@ models:
         tests:
           - not_null
           - value_in_range:
-              arguments:
-                min_value: 0
-                max_value: 1000
+              min_value: 0
+              max_value: 1000
               config:
                 severity: warn
       - name: total_balance_vnd
         tests:
           - value_in_range:
-              arguments:
-                min_value: 0
-                max_value: 999999999999999
+              min_value: 0
+              max_value: 999999999999999
               config:
                 severity: warn
