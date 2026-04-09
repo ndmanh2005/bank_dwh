@@ -25,7 +25,7 @@ with DAG(
 
     run_dbt_models = BashOperator(
         task_id='run_dbt_models',
-        bash_command="cd /opt/airflow/dags/repo/dags/banking_dwh && dbt run --profiles-dir .", 
+        bash_command="cp -r /opt/airflow/dags/repo/dags/banking_dwh /tmp/ && cd /tmp/banking_dwh && dbt run --profiles-dir .", 
     )
 
     check_dbt_ready >> run_dbt_models
