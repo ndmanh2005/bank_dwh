@@ -2,7 +2,7 @@
 name: 'banking_dwh'
 version: '1.0.0'
 
-\profile: 'banking_dwh'
+profile: 'banking_dwh'
 
 model-paths: ["models"]
 analysis-paths: ["analyses"]
@@ -23,7 +23,7 @@ models:
       +materialized: view
     sor:
       +materialized: table
-      +tag: ["sor", "dbt_sor"]
+      +tags: ["sor", "dbt_sor"]
     example:
       +materialized: view
 
@@ -31,4 +31,4 @@ tests:
   banking_dwh:
     sor:
       +store_failure: true
-      +schema: test_failure
+      +schema: test_failures
