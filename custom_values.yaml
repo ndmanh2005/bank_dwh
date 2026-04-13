@@ -4,12 +4,11 @@ redis:
 
 postgresql:
   image:
-    # Lệnh 1: Chỉ định máy chủ lưu trữ là Docker Hub (mặc định)
+    # Chỉ định máy chủ lưu trữ là Docker Hub (mặc định)
     registry: docker.io 
-    # Lệnh 2: Bẻ lái đường dẫn từ kho chính 'bitnami' sang kho cũ 'bitnamilegacy'
+    # chuyển sang dùng 'bitnamilegacy'
     repository: bitnamilegacy/postgresql 
-    # Lưu ý: Không khai báo 'tag' ở đây nữa. Hệ thống sẽ tự động bốc đúng 
-    # phiên bản tag mặc định (16.1.0-debian-11-r15) vốn đang nằm sẵn trong kho legacy.
+
 
 images:
   airflow:
